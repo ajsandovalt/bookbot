@@ -31,7 +31,7 @@ def main():
     try:
         # Check if there are more than 1 argument
         if len(sys.argv) != 2:
-            print("Usage: python3 main.py <path_to_book>")
+            print("Usage: python3 main.py <path_to_book>.txt")
             sys.exit(1)
         # Check if extension is txt
         elif Path(sys.argv[1]).suffix.lower() != ".txt":
