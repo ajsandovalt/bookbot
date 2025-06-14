@@ -31,14 +31,14 @@ def full_report(file_path):
 def main():
     try:
         # Check if there are more than 1 argument
-        if not len(sys.argv) == 2:
+        if len(sys.argv) != 2:
             print("Usage: python3 main.py <path_to_book>")
             sys.exit(1)
         # Check if extension is txt
-        elif not Path(sys.argv[1]).suffix.lower() == ".txt":
+        elif Path(sys.argv[1]).suffix.lower() != ".txt":
             raise Exception("Only txt files are allowed")
         else:
-            # Run program!
+            # Run report!
             full_report(sys.argv[1])
 
     except Exception as e:
