@@ -28,11 +28,6 @@ def classify_characters(string_input):
     return char_count
 
 
-def get_val(dict):
-    # Why????
-    return dict["num"]
-
-
 def sort_dict(dict):
     # Makes a list of dictionaries, and orders the elements by "num".
     # returns [{"char": char, "num": num_of_chars}, {...}]
@@ -41,5 +36,6 @@ def sort_dict(dict):
     for key in dict:
         if key.isalpha():
             sorted_list.append({"char": key, "num": dict[key]})
-    sorted_list.sort(reverse=True, key=get_val)
+    # Sort list in descending order
+    sorted_list.sort(reverse=True, key=lambda d: d["num"])
     return sorted_list
