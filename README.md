@@ -1,7 +1,7 @@
 # bookbot
 
 Simple analysis of text.
-It print a report that showcase different stats of a text file:
+It prints a report that showcase different stats of a text file:
 - Number of words
 - Clasification of character by how many time it appear on the text (Only alphabetic characters)
 
