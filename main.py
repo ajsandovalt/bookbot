@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 
-from stats import count_words, classify_characters
+from stats import count_words, classify_characters, sort_dict
 
 
 def get_book_text(file_path):
@@ -11,10 +11,23 @@ def get_book_text(file_path):
     return content
 
 
+def full_report(file_path):
+    book_string = get_book_text(file_path)
+    sorted_characters_dict = sort_dict(classify_characters(book_string))
+
+    print("============ BOOKBOT ============")
+    print(f"Analyzing book found at {file_path}")
+    print("----------- Word Count ----------")
+    print(f"Found {count_words(book_string)} total words")
+    print("--------- Character Count -------")
+    for dict in sorted_characters_dict:
+        print(f"{dict['char']}: {dict['num']}")
+    pass
+
+
 def main():
-    book_string = get_book_text("books/frankenstein.txt")
-    print(f"{count_words(book_string)} words found in the document")
-    print(classify_characters(book_string))
+    file_path = "books/frankenstein.txt"
+    full_report(file_path)
 
 
 main()

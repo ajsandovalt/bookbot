@@ -23,3 +23,18 @@ def classify_characters(string_input):
                 char_count[char] = 0
             char_count[char] += 1
     return char_count
+
+
+def get_val(dict):
+    # Why????
+    return dict["num"]
+
+
+def sort_dict(dict):
+    sorted_list = []
+
+    for key in dict:
+        if key.isalpha():
+            sorted_list.append({"char": key, "num": dict[key]})
+    sorted_list.sort(reverse=True, key=get_val)
+    return sorted_list
