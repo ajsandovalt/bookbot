@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 def count_words(string_input):
+    # Get the total number of words present in a string
 
     word_list = string_input.split()
     word_count = 0
@@ -12,6 +13,8 @@ def count_words(string_input):
 
 
 def classify_characters(string_input):
+    # Classifies characters present in a string in a unordered dictionary
+    # returns {char: num_of_chars}
 
     string_input = string_input.lower()
     word_list = string_input.split()
@@ -31,6 +34,8 @@ def get_val(dict):
 
 
 def sort_dict(dict):
+    # Makes a list of dictionaries, and orders the elements by "num".
+    # returns [{"char": char, "num": num_of_chars}, {...}]
     sorted_list = []
 
     for key in dict:
