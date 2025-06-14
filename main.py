@@ -32,7 +32,8 @@ def main():
     try:
         # Check if there are more than 1 argument
         if not len(sys.argv) == 2:
-            raise Exception("Only one argument is accepted: PATH_TO_TXT")
+            print("Usage: python3 main.py <path_to_book>")
+            sys.exit(1)
         # Check if extension is txt
         elif not Path(sys.argv[1]).suffix.lower() == ".txt":
             raise Exception("Only txt files are allowed")
